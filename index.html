@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan | Romeo & Juliet</title>
+    <meta name="description" content="Undangan pernikahan digital Romeo dan Juliet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Premium Mouse Glow Effect -->
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <!-- Opening Screen -->
+    <div id="opening-screen" class="opening-screen">
+        <div class="opening-content">
+            <p class="opening-to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <h2 id="guest-name" class="opening-guest">Tamu Undangan</h2>
+            <p class="opening-invite">Kami mengundang Anda untuk hadir di acara pernikahan kami</p>
+            <h1 class="opening-title">Romeo & Juliet</h1>
+            <button id="btn-open-envelope" class="btn btn-primary" style="margin-top: 2rem;">Buka Undangan</button>
+        </div>
+    </div>
+    
+    <!-- Music Controls -->
+    <div class="music-control hidden" id="music-control">
+        <button id="btn-music-play" class="music-btn" aria-label="Play/Pause Music">
+            <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            <svg id="icon-play" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" class="volume-slider" aria-label="Volume">
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="bg-music" loop>
+        <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Canon%20in%20D%20Major.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="nav-brand">R & J</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#kisah-cinta">Kisah</a></li>
+            <li><a href="#acara">Acara</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-kissing-in-the-forest-999-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="reveal-wrapper">
+                <p class="subtitle reveal-text">The Wedding Of</p>
+            </div>
+            <div class="reveal-wrapper">
+                <h1 class="title reveal-text">Romeo & Juliet</h1>
+            </div>
+            <div class="reveal-wrapper">
+                <p class="date reveal-text">Minggu, 12 Desember 2026</p>
+            </div>
+            <div class="reveal-wrapper">
+                <a href="#kisah-cinta" class="btn btn-primary reveal-text" style="margin-top: 2rem;">Jelajahi Undangan</a>
+            </div>
+        </div>
+        <div class="scroll-indicator reveal-text">
+            <span class="scroll-text">Scroll Down</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Kisah Cinta Section -->
+    <section id="kisah-cinta" class="section" style="position: relative; overflow: hidden;">
+        <div class="floating-shape shape-1 gsap-parallax" data-speed="0.2"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title gsap-fade-up">Kisah Cinta Kami</h2>
+            <div class="timeline">
+                <div class="timeline-item gsap-slide-right">
+                    <div class="timeline-date">2020</div>
+                    <h3 class="timeline-title">Pertemuan Pertama</h3>
+                    <p class="timeline-text">Kami bertemu secara tak terduga di sebuah kedai kopi kecil di sudut kota. Sebuah sapaan sederhana menjadi awal dari segalanya.</p>
+                </div>
+                <div class="timeline-item gsap-slide-left">
+                    <div class="timeline-date">2023</div>
+                    <h3 class="timeline-title">Merajut Kasih</h3>
+                    <p class="timeline-text">Setelah bertahun-tahun menjadi teman baik, kami memutuskan untuk melangkah ke jenjang yang lebih serius dan saling berkomitmen.</p>
+                </div>
+                <div class="timeline-item gsap-slide-right">
+                    <div class="timeline-date">2026</div>
+                    <h3 class="timeline-title">Lamaran & Pernikahan</h3>
+                    <p class="timeline-text">Dengan restu kedua orang tua, kami mantap untuk mengikat janji suci dan menempuh hidup baru bersama selamanya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acara Section -->
+    <section id="acara" class="section bg-light" style="position: relative; overflow: hidden;">
+        <div class="floating-shape shape-2 gsap-parallax" data-speed="0.15"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title gsap-fade-up">Detail Acara</h2>
+            <p class="section-subtitle gsap-fade-up">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
+            
+            <div class="event-grid">
+                <!-- Akad -->
+                <div class="event-card glass-card gsap-slide-right">
+                    <h3 class="event-name">Akad Nikah</h3>
+                    <p class="event-date">Minggu, 12 Desember 2026</p>
+                    <p class="event-time">08:00 - 10:00 WIB</p>
+                    <p class="event-location">
+                        <strong>Masjid Agung Kota</strong><br>
+                        Jl. Pahlawan No. 1, Kota Cinta
+                    </p>
+                    <a href="#" class="btn btn-outline" onclick="event.preventDefault(); alert('Google Maps akan terbuka');">Lihat Peta (Maps)</a>
+                </div>
+
+                <!-- Resepsi -->
+                <div class="event-card glass-card gsap-slide-left">
+                    <h3 class="event-name">Resepsi Pernikahan</h3>
+                    <p class="event-date">Minggu, 12 Desember 2026</p>
+                    <p class="event-time">11:00 - Selesai</p>
+                    <p class="event-location">
+                        <strong>Grand Ballroom Hotel</strong><br>
+                        Jl. Sudirman No. 99, Kota Cinta
+                    </p>
+                    <a href="#" class="btn btn-outline" onclick="event.preventDefault(); alert('Google Maps akan terbuka');">Lihat Peta (Maps)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="section section-countdown">
+        <div class="container text-center">
+            <h2 class="section-title gsap-fade-up">Menuju Hari Bahagia</h2>
+            <div class="countdown-wrapper" id="timer">
+                <div class="time-box gsap-zoom-in">
+                    <div class="flip-card-container" id="flip-days">
+                        <div class="card-face is-top"><span>00</span></div>
+                        <div class="card-face is-bottom"><span>00</span></div>
+                    </div>
+                    <span class="time-text">Hari</span>
+                </div>
+                <div class="time-box gsap-zoom-in">
+                    <div class="flip-card-container" id="flip-hours">
+                        <div class="card-face is-top"><span>00</span></div>
+                        <div class="card-face is-bottom"><span>00</span></div>
+                    </div>
+                    <span class="time-text">Jam</span>
+                </div>
+                <div class="time-box gsap-zoom-in">
+                    <div class="flip-card-container" id="flip-minutes">
+                        <div class="card-face is-top"><span>00</span></div>
+                        <div class="card-face is-bottom"><span>00</span></div>
+                    </div>
+                    <span class="time-text">Menit</span>
+                </div>
+                <div class="time-box gsap-zoom-in">
+                    <div class="flip-card-container" id="flip-seconds">
+                        <div class="card-face is-top"><span>00</span></div>
+                        <div class="card-face is-bottom"><span>00</span></div>
+                    </div>
+                    <span class="time-text">Detik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri" class="section" style="position: relative; overflow: hidden;">
+        <div class="floating-shape shape-3 gsap-parallax" data-speed="0.1"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title gsap-fade-up">Galeri Bahagia</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" alt="Cincin Pernikahan" class="gallery-img gsap-fade-up" loading="lazy" width="800" height="600">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" alt="Venue Resepsi" class="gallery-img gsap-fade-up" loading="lazy" width="800" height="600">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Pasangan" class="gallery-img gsap-fade-up" loading="lazy" width="800" height="600">
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title gsap-fade-up">Konfirmasi Kehadiran</h2>
+            <p class="section-subtitle gsap-fade-up">Merupakan suatu kehormatan bagi kami jika Bapak/Ibu/Saudara/i berkenan hadir.</p>
+            
+            <form id="rsvpForm" class="form-wrapper glass-card gsap-zoom-in">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="Nama" required placeholder="Masukkan nama Anda">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Jumlah Kehadiran</label>
+                    <select id="guests" name="Jumlah Tamu">
+                        <option value="1">1 Orang</option>
+                        <option value="2">2 Orang</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance">Konfirmasi Kehadiran</label>
+                    <select id="attendance" name="Kehadiran">
+                        <option value="Hadir">Ya, Saya akan hadir</option>
+                        <option value="Tidak Hadir">Maaf, Saya tidak bisa hadir</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Kirim Konfirmasi</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Ucapan Section -->
+    <section id="ucapan" class="section">
+        <div class="container">
+            <h2 class="section-title gsap-fade-up">Ucapan & Doa</h2>
+            
+            <form id="wishForm" class="form-wrapper glass-card gsap-slide-right" style="margin-bottom: 2rem;">
+                <div class="form-group">
+                    <input type="text" id="wishName" placeholder="Nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="wishMessage" rows="4" placeholder="Tuliskan ucapan atau doa untuk kami..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim Ucapan</button>
+            </form>
+
+            <div class="wishes-list gsap-slide-left" id="wishesList">
+                <div class="wish-item">
+                    <h4 class="wish-name">Budi & Keluarga</h4>
+                    <p class="wish-text">Selamat menempuh hidup baru! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+                </div>
+                <div class="wish-item">
+                    <h4 class="wish-name">Siti</h4>
+                    <p class="wish-text">Happy wedding Juliet dan Romeo! Langgeng terus sampai kakek nenek ya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section id="gift" class="section bg-light text-center">
+        <div class="container">
+            <h2 class="section-title gsap-fade-up">Kirim Hadiah</h2>
+            <p class="section-subtitle gsap-fade-up">Bagi keluarga dan sahabat yang ingin memberikan tanda kasih, dapat mengirimkan melalui rekening di bawah ini:</p>
+            
+            <div class="gift-card glass-card gsap-zoom-in">
+                <h3 class="bank-name">BCA</h3>
+                <p class="account-number" id="rekening">1234567890</p>
+                <p class="account-name">a.n Romeo</p>
+                <button class="btn btn-outline btn-small" onclick="copyRekening()">Salin Rekening</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+            <h2 class="footer-title">Romeo & Juliet</h2>
+            <p>Terima kasih atas doa dan restunya.</p>
+            <p class="copyright">&copy; 2026 Romeo & Juliet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
